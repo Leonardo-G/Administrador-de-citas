@@ -1,9 +1,11 @@
-<form>
+<form (ngSubmit)="emitPatient()">
     <div class="flex col-center mb-1">
         <p>Nombre Mascota:</p>
         <input
             type="text"
             placeholder="Nombre Mascota"
+            name="petName"
+            [(ngModel)]="patient.petName"
         >
     </div>
     <div class="flex col-center mb-1">
@@ -11,6 +13,8 @@
         <input
             type="text"
             placeholder="Nombre Dueño de la Mascota"
+            name="owner"
+            [(ngModel)]="patient.owner"
         >
     </div>
     <div class="flex col-center mb-1">
@@ -18,24 +22,33 @@
         <input
             type="text"
             placeholder="Teléfono"
+            name="phone"
+            [(ngModel)]="patient.phone"
         >
     </div>
     <div class="flex col-center mb-1">
         <p>Fecha:</p>
         <input
             type="date"
+            name="date"
+            [(ngModel)]="patient.date"
         >
     </div>
     <div class="flex col-center mb-1">
         <p>Hora:</p>
         <input
             type="time"
+            name="time"
+            [(ngModel)]="patient.time"
         >
     </div>
     <div class="flex col-center mb-1">
         <p>Sintomas:</p>
         <textarea
+            name="symptoms"
+            [(ngModel)]="patient.symptoms"
         ></textarea>
     </div>
+    
     <button type="submit">CREAR CITA</button>
 </form>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormComponent } from './form/form.component';
 import { WindowComponent } from './window/window.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { WindowComponent } from './window/window.component';
     WindowComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     WindowComponent

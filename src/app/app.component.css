@@ -1,0 +1,11 @@
+.container {
+    width: min(90%, 1140px);
+    margin: 0 auto;
+}
+
+.title{
+    margin: 30px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+}

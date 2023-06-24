@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { IPatient } from 'src/interface/patient.interface';
+import { Component } from '@angular/core';
+import { WindowService } from '../services/window.service';
 
 @Component({
   selector: 'app-form',
@@ -9,20 +9,5 @@ import { IPatient } from 'src/interface/patient.interface';
 
 export class FormComponent {
 
-  @Output()
-  public onNewPatient: EventEmitter<IPatient> = new EventEmitter();
-
-  patient: IPatient = {
-    petName: "",
-    owner: "",
-    phone: "",
-    date: "",
-    time: "",
-    symptoms: ""
-  };
-  
-  emitPatient(): void{
-    if ( Object.values(this.patient).some( p => p === "") ) return;
-    this.onNewPatient.emit( this.patient );
-  }
+  constructor( public windowService: WindowService ) {}
 }

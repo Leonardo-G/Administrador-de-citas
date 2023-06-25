@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WindowService } from '../services/window.service';
 
 @Component({
   selector: 'app-target',
@@ -6,9 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./target.component.css']
 })
 export class TargetComponent {
-  @Input()
-  error: boolean = false;
-  
-  @Input()
-  success: boolean = false;
+
+  constructor(public windowService: WindowService) {}
 }

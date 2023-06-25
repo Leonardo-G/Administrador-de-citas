@@ -1,0 +1,21 @@
+.target{
+    width: 100%;
+    padding: 12px 0;
+    color: #fff;
+    text-align: center;
+    border-width: 0 1px 4px 1px;
+}
+
+.target--error{
+    border-color: #ff291d;
+    background-color: #FF4136;
+}
+
+.target--success{
+    border-color: #23a127;
+    background-color: #28B62C;
+}
+
+.target p {
+    font-weight: 700;
+}

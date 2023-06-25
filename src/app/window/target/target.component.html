@@ -1,1 +1,6 @@
-<p>target works!</p>
+<div class="target mb-2" [ngClass]="{
+    'target--error': windowService.target === 'ERROR',
+    'target--success': windowService.target === 'SUCCESS',
+}">
+    <p>{{ windowService.message }}</p>
+</div>

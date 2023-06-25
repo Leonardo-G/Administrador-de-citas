@@ -36,6 +36,6 @@ export class WindowService {
 
         setTimeout(() => {
             this.target = "";
-        }, 5000);
+        }, 3000);
     }
 }

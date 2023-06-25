@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { IPatient } from 'src/interface/patient.interface';
+import { Component } from '@angular/core';
 import { WindowService } from '../services/window.service';
 
 @Component({

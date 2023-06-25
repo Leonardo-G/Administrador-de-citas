@@ -6,7 +6,9 @@ import { v4 as uuidv4 } from 'uuid';
     providedIn: 'root'
 })
 export class WindowService {
-    constructor() { }
+    constructor() { 
+        this.getLocalStorage();
+    }
 
     public target: "" | "ERROR" | "SUCCESS" = "";
     public message: string = "";
@@ -32,6 +34,7 @@ export class WindowService {
         this.patients.push(this.patient);
         this.visibleTarget("Se agrego correctamente", "SUCCESS");
 
+        this.saveLocalStorage();
         this.patient = {
             id: uuidv4(),
             petName: "",
@@ -56,6 +59,7 @@ export class WindowService {
         this.patients = this.patients.filter(p => p.id !== id);
         
         this.visibleTarget("Se elimino correctamente", "SUCCESS");
+        this.saveLocalStorage();
     }
 
     editTarget(id: string) {
@@ -89,5 +93,16 @@ export class WindowService {
         }
 
         this.visibleTarget("Editado correctamente", "SUCCESS");
+        this.saveLocalStorage();
+    }
+
+    private saveLocalStorage() {
+        localStorage.setItem('dates', JSON.stringify(this.patients));
+    }
+
+    private getLocalStorage() {
+        if( !localStorage.getItem('dates') ) return;
+    
+        this.patients = JSON.parse(localStorage.getItem('dates') || "[]"); 
     }
 }

@@ -55,3 +55,8 @@ svg{
     width: 25px;
     height: 25px;
 }
+
+.date{
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 1rem;
+}

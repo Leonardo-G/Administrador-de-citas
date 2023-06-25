@@ -1,4 +1,8 @@
-<form (ngSubmit)="windowService.newPatient()">
+<form (ngSubmit)="
+    windowService.isEdit 
+    ? windowService.confirmEditTarget(windowService.patient.id) 
+    : windowService.newPatient()
+">
     <div class="flex col-center mb-1">
         <p>Nombre Mascota:</p>
         <input
@@ -50,5 +54,7 @@
         ></textarea>
     </div>
     
-    <button type="submit">CREAR CITA</button>
+    <button type="submit">
+        {{ windowService.isEdit ? "Editar Cita" : "Crear Cita" }}
+    </button>
 </form>
